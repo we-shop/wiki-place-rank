@@ -91,7 +91,7 @@ func WriteGeoRanks(outfile string, numGeoRanks int, cp chan *RankedGeo, done cha
 	if strings.HasSuffix(outfile, ".txt") {
 		log.Printf("Output in text format")
 		writer = func(l *RankedGeo) error {
-			fmt.Fprintf(of, "%d \"%s\" %s %.10f %d\n", l.GeoEntry.Id, l.GeoEntry.Name, l.GeoEntry.Wiki, l.Rank, l.Order)
+			fmt.Fprintf(of, "%d \"%s\" \"%s\" %s %.10f %d \"%s\"\n", l.GeoEntry.Id, l.GeoEntry.Name, l.Title, l.GeoEntry.Wiki, l.Rank, l.Order, strings.Join(l.Aliases, "|"))
 			return nil
 		}
 	}

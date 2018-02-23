@@ -6,7 +6,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/weshop/wiki-place-rank/geowiki"
+	"github.com/weshop/travel-wiki-place-rank/geowiki"
 )
 
 func main() {

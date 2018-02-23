@@ -18,7 +18,7 @@ To run, first download:
 
 Install this package:
 
-```go get github.com/madelfio/wiki-place-rank/```
+```go get github.com/weshop/travel-wiki-place-rank/```
 
 Run the following:
 
@@ -33,3 +33,22 @@ Alternatively, you can run each step of the process individually:
 3) `wiki-place-rank locations $GEONAMESDUMP 3-locations.gob`
 
 4) `wiki-place-rank georank 2-page-rank.gob 3-locations.gob 4-geo-ranks.txt`
+
+
+# WeShop notes
+
+1. We recommend to download these data dumps:
+
+    - `enwiki-(latest_date)-pages-articles.xml.bz2` using BitTorrent client
+    - RDF dump (`http://download.geonames.org/all-geonames-rdf.zip` as of Feb 2018)
+  
+1. We recommend to process each step individually
+
+2. The output file (`4-geo-ranks.txt`) includes 7 columns:
+    * geonameid (integer)
+    * geonames_place_name (string)
+    * wikipedia_place_name (string)
+    * wikipedia_article_slug (string)
+    * popularity_score (float) 
+    * ordinal_number (integer)
+    * alternative names (string, pipe-separated list), based on the wikipedia article aliases (aka Wikipedia:Redirect)
