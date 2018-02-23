@@ -44,7 +44,7 @@ Alternatively, you can run each step of the process individually:
   
 1. We recommend to process each step individually
 
-2. The output file (`4-geo-ranks.txt`) includes 7 columns:
+2. The output file (`4-geo-ranks.txt`) format:
     * geonameid (integer)
     * geonames_place_name (string)
     * wikipedia_place_name (string)
