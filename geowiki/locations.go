@@ -29,7 +29,7 @@ func yieldLocationEntries(infile string, cp chan *GeoEntry) {
 	}
 	defer f.Close()
 
-	bf := bufio.NewReaderSize(f, 25000)
+	bf := bufio.NewReaderSize(f, 50000)
 
 	var wiki, name, id_str []string
 
@@ -46,7 +46,7 @@ func yieldLocationEntries(infile string, cp chan *GeoEntry) {
 
 		if isPrefix {
 			log.Println("Long Line")
-			log.Fatal("Error: Unexpected long line reading", f.Name())
+			log.Fatal("Error: Unexpected long line reading:", f.Name())
 		}
 
 		l := string(line)
